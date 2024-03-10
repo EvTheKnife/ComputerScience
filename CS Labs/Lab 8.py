@@ -25,3 +25,5 @@ total = numItems * price
 
 print("$%-5.2f" %total)
 
+
+

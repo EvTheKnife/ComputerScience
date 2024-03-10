@@ -103,3 +103,4 @@ for numSec in range(int(inputNum)):
 
 turtle.hideturtle()
 time.sleep(1)
+
