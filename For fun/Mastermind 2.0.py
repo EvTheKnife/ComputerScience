@@ -140,3 +140,5 @@ if correctSpot >= 4:
 
 if correctSpot < 4 and i == 11:
     print("You lost! :(")
+
+#why dis no work
