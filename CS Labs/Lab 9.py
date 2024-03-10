@@ -1,7 +1,7 @@
-import random
+import random as rand
 
-fairDie_1 = random.randint(1,6)
-fairDie_2 = random.randint(1,6)
+fairDie_1 = rand.randint(1,6)
+fairDie_2 = rand.randint(1,6)
 
 numTosses = 1
 
@@ -11,8 +11,8 @@ print(f"{fairDie_1}, {fairDie_2} ({fairDie_1 + fairDie_2})")
 print("Added the rolls together to generate sum")
 
 while sum < 21:
-    fairDie_1 = random.randint(1,6)
-    fairDie_2 = random.randint(1,6)
+    fairDie_1 = rand.randint(1,6)
+    fairDie_2 = rand.randint(1,6)
     numTosses += 1
     sumThisRoll = fairDie_1 + fairDie_2
     print(f"{fairDie_1}, {fairDie_2} ({sumThisRoll}) ")

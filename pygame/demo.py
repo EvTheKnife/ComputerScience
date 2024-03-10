@@ -93,10 +93,10 @@ all_sprites.add(P1)
 all_sprites.add(PT1)
 platforms.add(PT1)
 
-for x in range(5):
-    pl = platform()
-    platforms.add(pl)
-    all_sprites.add(pl)
+#for x in range(5):
+#    pl = platform()
+#    platforms.add(pl)
+#    all_sprites.add(pl)
 
 
 while True:
@@ -109,6 +109,7 @@ while True:
         displaysurface.blit(entity.surf, entity.rect)
     for entity in platforms:
         displaysurface.blit(entity.surf, entity.rect)
+    
     
     P1.move()
     P1.update()
