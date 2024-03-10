@@ -69,7 +69,6 @@ def inputListGen():
 
 def guessAnswers(secretList, userList):
     
-    global moddedSecretList
     moddedSecretList = secretList
     
     global correctSpot
@@ -124,9 +123,7 @@ def guessAnswers(secretList, userList):
     print(f"You have {correctSpot} color(s) in the correct spot(s) and {correctColor} with the correct color but in the wrong spot(s)")
 
 
-secretListGen()
-inputListGen()
-guessAnswers(secretList, userList)
+correctSpot = 0
 i = 0
 
 while correctSpot < 4 and i != 11:
