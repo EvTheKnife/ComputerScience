@@ -116,12 +116,12 @@ all_sprites.add(P1)
 all_sprites.add(PT1)
 platforms.add(PT1)
 
-
-while True:
+run = True
+while run:
     for event in pygame.event.get():
         if event.type == QUIT:
-            pygame.quit()
-            sys.exit()
+            run = False
+            
     displaysurface.fill((0, 0, 0))
     for entity in all_sprites:
         displaysurface.blit(entity.surf, entity.rect)
