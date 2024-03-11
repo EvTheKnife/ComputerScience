@@ -101,11 +101,6 @@ all_sprites.add(P1)
 all_sprites.add(PT1)
 platforms.add(PT1)
 
-#for x in range(5):
-#    pl = platform()
-#    platforms.add(pl)
-#    all_sprites.add(pl)
-
 
 while True:
     for event in pygame.event.get():
