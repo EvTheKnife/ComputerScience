@@ -23,7 +23,7 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
 
-        self.surf = pygame.image.load('Woopa.png')
+        self.surf = pygame.image.load('images/Woopa.png')
         self.surf = pygame.transform.scale(self.surf, (100, 100))
         self.rect = self.surf.get_rect()
         
@@ -37,12 +37,12 @@ class Player(pygame.sprite.Sprite):
         pressed_keys = pygame.key.get_pressed()
         if pressed_keys[K_LEFT]:
             self.acc.x = -ACC
-            self.surf = pygame.image.load('Woopa_Flipped.png')
+            self.surf = pygame.image.load('images/Woopa_Flipped.png')
             self.surf = pygame.transform.scale(self.surf, (100, 100))
 
         if pressed_keys[K_RIGHT]:
             self.acc.x = ACC
-            self.surf = pygame.image.load('Woopa.png')
+            self.surf = pygame.image.load('images/Woopa.png')
             self.surf = pygame.transform.scale(self.surf, (100, 100))
 
         
