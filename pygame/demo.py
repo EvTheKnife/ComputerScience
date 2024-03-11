@@ -2,6 +2,7 @@ from typing import Any
 import pygame
 from pygame.locals import *
 import random
+import sys
 
 pygame.init()
 
@@ -16,7 +17,7 @@ FPS = 60
 FramePerSec = pygame.time.Clock()
 
 displaysurface = pygame.display.set_mode((WIDTH, HIGHT))
-pygame.display.set_caption("Game")
+pygame.display.set_caption("WOOP")
 
 
 class Player(pygame.sprite.Sprite):
