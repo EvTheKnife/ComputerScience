@@ -7,8 +7,8 @@ pygame.init()
 
 vec = pygame.math.Vector2
 
-HIGHT = 450
-WIDTH = 400
+HIGHT = 200
+WIDTH = 800
 ACC = 0.5
 FRIC = -0.12
 FPS = 60
@@ -22,9 +22,11 @@ pygame.display.set_caption("Game")
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.surf = pygame.Surface((30, 30))
-        self.surf.fill((128, 255, 40))
+
+        self.surf = pygame.image.load('Woopa.png')
+        self.surf = pygame.transform.scale(self.surf, (100, 100))
         self.rect = self.surf.get_rect()
+        
 
         self.pos = vec((10, 385))
         self.vel = vec(0,0)
@@ -35,8 +37,14 @@ class Player(pygame.sprite.Sprite):
         pressed_keys = pygame.key.get_pressed()
         if pressed_keys[K_LEFT]:
             self.acc.x = -ACC
+            self.surf = pygame.image.load('Woopa_Flipped.png')
+            self.surf = pygame.transform.scale(self.surf, (100, 100))
+
         if pressed_keys[K_RIGHT]:
             self.acc.x = ACC
+            self.surf = pygame.image.load('Woopa.png')
+            self.surf = pygame.transform.scale(self.surf, (100, 100))
+
         
         self.acc.x += self.vel.x * FRIC
         self.vel += self.acc
@@ -81,7 +89,7 @@ class platform(pygame.sprite.Sprite):
 
 PT1 = platform()
 PT1.surf = pygame.Surface((WIDTH, 20))
-PT1.surf.fill((255,0,0))
+PT1.surf.fill((255,255,255))
 PT1.rect = PT1.surf.get_rect(center = (WIDTH/2, HIGHT - 10))
 
 
