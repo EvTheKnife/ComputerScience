@@ -91,7 +91,7 @@ class Player(pygame.sprite.Sprite):
         if self.pos.y < 0:
             self.pos.y = HIGHT
 
-        
+
 
     def update(self):
         hits = pygame.sprite.spritecollide(P1, platforms, False)
@@ -144,7 +144,7 @@ while run:
     for entity in platforms:
         displaysurface.blit(entity.surf, entity.rect)
 
-    
+
 
     P1.move()
     P1.update()
@@ -155,4 +155,3 @@ while run:
 
     pygame.display.update()
     FramePerSec.tick(FPS)
-
