@@ -1,6 +1,7 @@
 from typing import Any
 import pygame
 from pygame.locals import *
+import pygame_gui
 import random
 import sys
 
@@ -24,7 +25,9 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
 
-        self.surf = pygame.image.load('images/Woopa.png')
+
+
+        self.surf = pygame.image.load('pygame/images/Woopa.png')
         self.surf = pygame.transform.scale(self.surf, (100, 100))
         self.rect = self.surf.get_rect()
         
@@ -32,19 +35,28 @@ class Player(pygame.sprite.Sprite):
         self.pos = vec((10, 385))
         self.vel = vec(0,0)
         self.acc = vec(0,0)
+
     def move(self):
         self.acc = vec(0,0.5)
 
         pressed_keys = pygame.key.get_pressed()
         if pressed_keys[K_LEFT]:
+            
             self.acc.x = -ACC
-            self.surf = pygame.image.load('images/Woopa_Flipped.png')
+            self.surf = pygame.image.load('pygame/images/Woopa_Flipped.png')
             self.surf = pygame.transform.scale(self.surf, (100, 100))
 
+        
         if pressed_keys[K_RIGHT]:
+            
             self.acc.x = ACC
-            self.surf = pygame.image.load('images/Woopa.png')
+            self.surf = pygame.image.load('pygame/images/Woopa.png')
             self.surf = pygame.transform.scale(self.surf, (100, 100))
+            
+
+        if pressed_keys[K_1]:
+            pygame.mixer.music.load('pygame/Sounds/pokemon_wooper_sound.mp3')
+            pygame.mixer.music.play(-1)
 
         
         self.acc.x += self.vel.x * FRIC
@@ -65,7 +77,9 @@ class Player(pygame.sprite.Sprite):
             self.pos.y = 0
         if self.pos.y < 0:
             self.pos.y = HIGHT
-    
+
+        
+
     def update(self):
         hits = pygame.sprite.spritecollide(P1, platforms, False)
         if P1.vel.y > 0:
@@ -102,19 +116,19 @@ all_sprites.add(P1)
 all_sprites.add(PT1)
 platforms.add(PT1)
 
-
-while True:
+run = True
+while run:
     for event in pygame.event.get():
         if event.type == QUIT:
-            pygame.quit()
-            sys.exit()
+            run = False
+            
     displaysurface.fill((0, 0, 0))
     for entity in all_sprites:
         displaysurface.blit(entity.surf, entity.rect)
     for entity in platforms:
         displaysurface.blit(entity.surf, entity.rect)
-    
-    
+
+
     P1.move()
     P1.update()
     if event.type == pygame.KEYDOWN:
