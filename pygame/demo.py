@@ -3,6 +3,7 @@ import pygame
 from pygame.locals import *
 import random
 import sys
+import time
 
 pygame.init()
 
@@ -13,6 +14,7 @@ WIDTH = 800
 ACC = 0.5
 FRIC = -0.12
 FPS = 60
+frame = 0
 
 FramePerSec = pygame.time.Clock()
 
@@ -26,7 +28,7 @@ class Player(pygame.sprite.Sprite):
 
 
 
-        self.surf = pygame.image.load('pygame/images/Woopa.png')
+        self.surf = pygame.image.load('pygame/images/image(1).png')
         self.surf = pygame.transform.scale(self.surf, (100, 100))
         self.rect = self.surf.get_rect()
         
@@ -37,6 +39,8 @@ class Player(pygame.sprite.Sprite):
 
     def move(self):
         self.acc = vec(0,0.5)
+        global frame
+        frame += 1
 
         pressed_keys = pygame.key.get_pressed()
         if pressed_keys[K_LEFT]:
@@ -46,16 +50,28 @@ class Player(pygame.sprite.Sprite):
             self.surf = pygame.transform.scale(self.surf, (100, 100))
 
         
+        
         if pressed_keys[K_RIGHT]:
             
             self.acc.x = ACC
-            self.surf = pygame.image.load('pygame/images/Woopa.png')
-            self.surf = pygame.transform.scale(self.surf, (100, 100))
+
+        if pressed_keys[K_RIGHT]:
+            if frame % 20 == 0:
+
+                self.surf = pygame.image.load('pygame/images/image(1).png')
+                self.surf = pygame.transform.scale(self.surf, (100, 100))
+
+            if frame % 20 == 10:
+                self.surf = pygame.image.load('pygame/images/image.png')
+                self.surf = pygame.transform.scale(self.surf, (100, 100))
+
+            
             
 
         if pressed_keys[K_1]:
             pygame.mixer.music.load('pygame/Sounds/pokemon_wooper_sound.mp3')
             pygame.mixer.music.play(-1)
+
 
         
         self.acc.x += self.vel.x * FRIC
@@ -130,6 +146,7 @@ while run:
     for entity in platforms:
         displaysurface.blit(entity.surf, entity.rect)
 
+    
 
     P1.move()
     P1.update()
