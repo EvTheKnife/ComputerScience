@@ -26,12 +26,10 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
 
-
-
         self.surf = pygame.image.load('Python/pygame/images/Woopa.png')
         self.surf = pygame.transform.scale(self.surf, (100, 100))
         self.rect = self.surf.get_rect()
-        
+
 
         self.pos = vec((10, 385))
         self.vel = vec(0,0)
