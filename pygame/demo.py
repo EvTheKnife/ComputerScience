@@ -1,7 +1,6 @@
 from typing import Any
 import pygame
 from pygame.locals import *
-import pygame_gui
 import random
 import sys
 
@@ -121,6 +120,9 @@ while run:
     for event in pygame.event.get():
         if event.type == QUIT:
             run = False
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_ESCAPE:
+            run = False
             
     displaysurface.fill((0, 0, 0))
     for entity in all_sprites:
@@ -138,3 +140,4 @@ while run:
 
     pygame.display.update()
     FramePerSec.tick(FPS)
+
