@@ -41,7 +41,7 @@ class Player(pygame.sprite.Sprite):
         frame += 1
 
         pressed_keys = pygame.key.get_pressed()
-        if pressed_keys[K_LEFT]:
+        if pressed_keys[K_LEFT] or pressed_keys[K_a]:
             
             self.acc.x = -ACC
             self.surf = pygame.image.load('Python/pygame/images/Woopa_Flipped.png')
@@ -49,11 +49,11 @@ class Player(pygame.sprite.Sprite):
 
         
         
-        if pressed_keys[K_RIGHT]:
+        if pressed_keys[K_RIGHT] or pressed_keys[K_d]:
             
             self.acc.x = ACC
 
-        if pressed_keys[K_RIGHT]:
+        if pressed_keys[K_RIGHT] or pressed_keys[K_d]:
             if frame % 20 == 0:
 
                 self.surf = pygame.image.load('Python/pygame/images/image(1).png')
