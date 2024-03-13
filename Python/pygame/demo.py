@@ -102,8 +102,10 @@ class Player(pygame.sprite.Sprite):
 
     def jump(self):
         hits = pygame.sprite.spritecollide(self, platforms, False)
-        if hits:
-            self.vel.y = -15
+        pressed_keys = pygame.key.get_pressed()
+        if pressed_keys[K_SPACE] or pressed_keys[K_UP]:
+            if hits:
+                self.vel.y = -15
 
 class platform(pygame.sprite.Sprite):
     def __init__(self):
@@ -148,9 +150,8 @@ while run:
 
     P1.move()
     P1.update()
-    if event.type == pygame.KEYDOWN:
-        if event.key == pygame.K_UP:
-            P1.jump()
+    P1.jump()
+
 
 
     pygame.display.update()
