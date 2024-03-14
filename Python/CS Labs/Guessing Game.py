@@ -17,7 +17,7 @@ while userNum != correctNum:
     if userNum > correctNum:
         print("Too high!")
 
-    userNum = int(input("Input your guess(from {lowGuessRange} to {highGuessRange}): "))
+    userNum = int(input(f"Input your guess (from {lowGuessRange} to {highGuessRange}): "))
 
     numGuesses += 1
 
