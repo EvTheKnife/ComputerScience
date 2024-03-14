@@ -69,8 +69,13 @@ def inputListGen():
 
 def guessAnswers(secretList, userList):
     
-    moddedSecretList = secretList
-    
+    global moddedSecretList
+    moddedSecretList = []
+
+    for i in range(4):
+        moddedSecretList.append(secretList[i])
+
+
     global correctSpot
     global correctColor
 
@@ -125,6 +130,8 @@ def guessAnswers(secretList, userList):
 
 correctSpot = 0
 i = 0
+
+secretListGen()
 
 while correctSpot < 4 and i != 11:
     inputListGen()
