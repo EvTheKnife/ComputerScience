@@ -6,7 +6,7 @@ def secretListGen():
     for i in range(4):
         secretList.append(colorList[random.randint(0,5)])
 
-    print(secretList)
+    #print(secretList)
 
 def inputListGen():
     isValid_1 = False
@@ -59,7 +59,11 @@ def inputListGen():
                 print("Please try inputting the color again")
 
         isCorrect = input(f"Is {inputColor1}, {inputColor2}, {inputColor3}, {inputColor4} correct? (Y, N) ")
-
+        if isCorrect.lower() == "":
+            isValid_1 = False
+            isValid_2 = False
+            isValid_3 = False
+            isValid_4 = False
 
 
     global userList
@@ -71,17 +75,11 @@ def guessAnswers(secretList, userList):
     
     global moddedSecretList
     moddedSecretList = []
-<<<<<<< HEAD
-    for i in range(4):
-        moddedSecretList.append(secretList[i])
-
-=======
 
     for i in range(4):
         moddedSecretList.append(secretList[i])
 
 
->>>>>>> e8953203d7cf439eecc15ab89aaa751e0278432d
     global correctSpot
     global correctColor
 
@@ -138,7 +136,7 @@ correctSpot = 0
 i = 0
 secretListGen()
 
-secretListGen()
+
 
 while correctSpot < 4 and i != 11:
     inputListGen()
@@ -151,3 +149,4 @@ if correctSpot >= 4:
 
 if correctSpot < 4 and i == 11:
     print("You lost! :(")
+    print(f"The correct list was: {secretList}")

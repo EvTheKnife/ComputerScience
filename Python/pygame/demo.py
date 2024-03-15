@@ -19,7 +19,7 @@ frame = 0
 FramePerSec = pygame.time.Clock()
 
 displaysurface = pygame.display.set_mode((WIDTH, HIGHT))
-pygame.display.set_caption("WOOP")
+pygame.display.set_caption("WOOPa")
 
 
 class Player(pygame.sprite.Sprite):
