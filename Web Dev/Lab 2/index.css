@@ -1,0 +1,17 @@
+body{
+    background-color: #c1c3d1;
+    color: #000000;;
+
+}
+
+#container
+{
+    position: relative;
+    float: left;
+    width: 30%;
+    height: 100vh;
+    list-style: none;
+    font-family: fantasy;
+    text-transform: uppercase;
+    overflow: visible;
+}
