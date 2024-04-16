@@ -16,7 +16,6 @@ white = (240, 240, 240)
 bg_color = (100, 100, 200)
 
 
-
 display = pygame.display.set_mode((WIDTH, HEIGHT))
 FramePerSec = pygame.time.Clock()
 
