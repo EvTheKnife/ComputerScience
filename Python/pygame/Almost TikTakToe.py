@@ -53,14 +53,25 @@ class HitBox(pygame.sprite.Sprite):
 displaySurf.fill(BG_COLOR)
 
 BoardGroup = pygame.sprite.Group()
+HitBoxesGroup = pygame.sprite.Group()
 
 Vert_Line_1 = Lines(300, 300, 10, 500, LINE_COLOR)
 Vert_Line_2 = Lines(500, 300, 10, 500, LINE_COLOR)
 Horiz_Line_1 = Lines(400, 200, 500, 10, LINE_COLOR)
 Horiz_Line_2 = Lines(400, 400, 500, 10, LINE_COLOR)
 
-
 TLHitbox = HitBox(295, 50, 145, 145)
+MLHitbox = HitBox(295, 205, 145, 190)
+BLHitbox = HitBox(295, 405, 145, 145)
+TCHitbox = HitBox(495, 50, 190, 145)
+MCHitbox = HitBox(495, 205, 190, 190)
+BCHitbox = HitBox(495, 405, 190, 145)
+TRHitbox = HitBox(650, 50, 145, 145)
+MRHitbox = HitBox(650, 205, 145, 190)
+BRHitbox = HitBox(650, 405, 145, 145)
+
+
+
 
 
 BoardGroup.add(Vert_Line_1, Vert_Line_2, Horiz_Line_1, Horiz_Line_2)
@@ -73,8 +84,20 @@ while running:
 
     for entity in BoardGroup:
         displaySurf.blit(entity.surf, entity.rect)
-
+    
+    
     displaySurf.blit(TLHitbox.surf, TLHitbox.rect)
+    displaySurf.blit(TCHitbox.surf, TCHitbox.rect)
+    displaySurf.blit(MLHitbox.surf, MLHitbox.rect)
+    displaySurf.blit(MCHitbox.surf, MCHitbox.rect)
+    displaySurf.blit(BLHitbox.surf, BLHitbox.rect)
+    displaySurf.blit(BCHitbox.surf, BCHitbox.rect)
+    displaySurf.blit(TRHitbox.surf, TRHitbox.rect)
+    displaySurf.blit(MRHitbox.surf, MRHitbox.rect)
+    displaySurf.blit(BRHitbox.surf, BRHitbox.rect)
+
+
+
 
     for event in pygame.event.get():
         if event.type == QUIT:
@@ -84,7 +107,18 @@ while running:
             if event.key == K_ESCAPE:
                 running = False
 
+
     TLHitbox = HitBox(295, 50, 145, 145)
+    MLHitbox = HitBox(295, 205, 145, 190)
+    BLHitbox = HitBox(295, 405, 145, 145)
+    TCHitbox = HitBox(495, 50, 190, 145)
+    MCHitbox = HitBox(495, 205, 190, 190)
+    BCHitbox = HitBox(495, 405, 190, 145)
+    TRHitbox = HitBox(650, 50, 145, 145)
+    MRHitbox = HitBox(650, 205, 145, 190)
+    BRHitbox = HitBox(650, 405, 145, 145)
+
+
 
 
     pygame.display.update()
