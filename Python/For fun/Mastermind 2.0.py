@@ -6,7 +6,6 @@ def secretListGen():
     for i in range(4):
         secretList.append(colorList[random.randint(0,5)])
 
-    #print(secretList)
 
 def inputListGen():
     isValid_1 = False

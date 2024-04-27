@@ -38,7 +38,7 @@ class HitBox(pygame.sprite.Sprite):
 
         mouse_x = pygame.mouse.get_pos()[0]
         mouse_y = pygame.mouse.get_pos()[1]
-
+        
 
         if self.rect.collidepoint(mouse_x, mouse_y):
             self.surf.fill(HOVER_COLOR)
@@ -47,6 +47,9 @@ class HitBox(pygame.sprite.Sprite):
         if self.rect.collidepoint(mouse_x, mouse_y) == False:
             self.surf.fill(BG_COLOR)
 
+        for event_1 in pygame.event.get():
+            if event_1.type == MOUSEBUTTONDOWN and self.rect.collidepoint(mouse_x, mouse_y):
+                print("yes")
 
 
 
