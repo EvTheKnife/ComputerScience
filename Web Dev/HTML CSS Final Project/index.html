@@ -13,12 +13,29 @@
 
     
     <h2>First Steps</h2>
-    <pre><code>
+    <p>Now listen here buckeroo I'll tell you how to code a game of mastermind</p>
+    <p>First you gotta import the random library</p>
+    <pre><code class="language-python">
         import random
-        
-
-
     </code></pre>
+
+    <p>Then little whippersnapper you gotta define some lists:</p>
+
+    <pre><code>
+        colorList = ["Red", "Blue", "Yellow", "Green", "Black", "White"]
+        secretList = []
+    </code></pre>
+    
+    <p>Then you're gonna define the secret key generator, ya hear?</p>
+    <pre><code>
+        def secretListGen():
+            for i in range(4):
+                secretList.append(colorList[random.randint(0,5)])
+    </code></pre>
+
+    <p></p>
+
+    
 
 </body>
 <style>
@@ -55,7 +72,11 @@
         100% {opacity: 1.0;}
         
     }   
-
+    code {
+        background-color: rgb(60, 60, 60) ;
+        width: 90%;
+        display: inline-block;
+    }
 
 
 
