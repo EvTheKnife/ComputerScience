@@ -67,8 +67,7 @@ def pins():
             if event.type == pygame.KEYDOWN:
 
                 if inputPinSpotList[i].collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_1 :
-                    print("yes")
-
+                    pygame.draw.rect(display, RED, inputPinSpotList[i])
 
 
 Board()
