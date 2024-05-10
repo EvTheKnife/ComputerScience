@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CHANGE ME</title>
+  </head>
+  <body>
+    <script>  
+        var value = 0
+        function lightSwitch() { 
+            switch (value) {
+                case 0:
+                    document.getElementById('lightbulb').src='images/pic_bulbon.gif';
+                    value=1;
+                    break;
+                case 1:
+                    document.getElementById('lightbulb').src='images/pic_bulboff.gif';
+                    value=0;
+                    break;
+            }
+        }
+    </script>
+
+    <button type="button" onclick="lightSwitch()"><img id="lightbulb" src="images/pic_bulboff.gif"></button>
+
+
+
+    <p>Go to the <a href="index.html">home</a> page.</p>
+
+  </body>
+</html>

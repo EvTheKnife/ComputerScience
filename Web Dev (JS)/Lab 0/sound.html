@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Buttons Demo</title>
+  </head>
+  <body>
+    <script>
+        var playState=0;
+        function playPause() {
+            switch(playState) {
+                case 0:
+                    document.getElementById("horseNeigh").play();
+                    playState=1;
+                    break;
+                case 1:
+                    document.getElementById("horseNeigh").pause();
+                    playState=0;
+                    break;
+            }
+        }
+    </script>
+
+
+    <audio id="horseNeigh">
+        <source src="sounds/horseNeigh.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <p>HeAR dA HoNsE nEigH</p>
+
+    <button type="button" onclick="playPause()">Play / Pause sound</button>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CHANGE ME</title>
+  </head>
+  <body>
+    <script>
+        var maskState = 0;
+        var colorState = 1;
+        var textVis = 0;
+
+        function maskText() {
+            switch (maskState) {
+                case 0:
+                    document.getElementById("messageText").innerHTML = "*********************";
+                    maskState=1;
+                    break;
+                case 1:
+                    document.getElementById("messageText").innerHTML = "Java Screept is coool";
+                    maskState=0;
+                    break;
+            }
+
+        }
+
+        function changeColor () {
+              switch(colorState) {
+                case 0:
+                  document.getElementById("messageText").style.color='#000000'
+                  colorState=1;
+                  break;
+                case 1:
+                  document.getElementById("messageText").style.color='#00ff00'
+                  colorState=2;
+                  break;
+                case 2:
+                  document.getElementById("messageText").style.color='#ff0000'
+                  colorState=0;
+                  break;
+              }
+        }
+
+
+        function hideText() {
+          switch (textVis) {
+            case 0:
+              document.getElementById("messageText").style.display="none";
+              textVis=1;
+              break;
+            case 1:
+              document.getElementById("messageText").style.display="block";
+              textVis=0;
+              break;
+          }
+        }
+
+        
+
+    </script>
+    <p id="messageText">Java Screept is coool</p>
+    <button type="button" onclick="maskText()">Unmask / Mask Text</button> <button type="button" onclick="changeColor()">Change Text Color</button> <button type="button" onclick="hideText()">Hide / Show text</button>
+
+
+    <p>Go to the <a href="index.html">home</a> page.</p>
+
+
+  </body>
+</html>
