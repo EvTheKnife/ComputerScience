@@ -12,21 +12,15 @@
         var number = parseInt(element.value);
         element.value = number + 3;
         
-        var redFont = document.getElementById('redFont');
-          if (redFont.checked) {
-            element.style.color="ff0000";
-          }
-          else {
-            element.style.color="000000";
-          }
+        var changeFont = document.forms[0]
         }
 
 
     </script>
 
     Enter a number: <input id="number" alt="Enter a number:" type="text" /> <br>
-    <input id="redFont" alt="Change font to rad" type="checkbox"/>Change font to rad <br>
-    <input alt="Add tree" type="button" value="Add Tree" onclick="addTree()"/> 
+    <input name="changeFont" alt="Change font to rad" type="radio"/>Change font to rad  <input name="changeFont" type="radio"/> Change font to italics <br>
+    <input alt="Add tree" type="button" value="Add Three" onclick="addTree()"/> 
 
   </body>
 </html>

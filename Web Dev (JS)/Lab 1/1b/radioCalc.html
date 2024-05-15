@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Calculators</title>
+  </head>
+  <body>
+    <script>
+      var operand1 = parseInt(document.getElementById('operand1').value);
+      var operand2 = parseInt(document.getElementById('operand2').value);
+
+      var operation = document.forms[0];
+
+      var element = document.getElementById('resultNumber');
+      function Operate() {
+        if (operation[0].checked){
+          element.value = operand1 + operand2;
+        } else if(operation[1].checked) {
+          element.value = operand1 - operand2;
+        } else if (operation[2].checked) {
+          element.value = operand1 * operand2;
+        } else if (operation[3].checked) {
+          element.value = operand1 / operand2;
+        } else if (operation[4].checked) {
+          element.value = operand1 % operand2;
+        } else if (operation[5].checked) {
+          element.value = operand1 ** operand2
+        }
+      }
+    </script>
+
+    Operand 1:  <input id="operand1" alt="First Operand" type="text" value="0"/> 
+    Operand 2:  <input id="operand2" alt="Second Operand" type="text" value="0"/> 
+    
+
+    <form>
+        <input name="operation" alt="Add Operation" type="radio" checked/> Add
+        <input name="operation" alt="Subtract Operation" type="radio" />Subtract
+        <input name="operation" alt="Multiply Operation" type="radio" />Multiply
+        <input name="operation" alt="Divide Operation" type="radio" />Divide
+        <input name="operation" alt="Remainder Operation" type="radio" />Remainder
+        <input name="operation" alt="Exponent Operation" type="radio" />Exponent
+        <br>
+    </form>
+
+    <button type="button" onclick="Operate()" >Operate</button>
+
+    <br>
+
+    Result: <input id="resultNumber" alt="Result" type="text" value="0"/>
+  </body>
+</html>
