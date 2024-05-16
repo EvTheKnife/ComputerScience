@@ -7,13 +7,15 @@
   </head>
   <body>
     <script>
-      var operand1 = parseInt(document.getElementById('operand1').value);
-      var operand2 = parseInt(document.getElementById('operand2').value);
+     
+      function Operates() {
+        var operand1 = parseInt(document.getElementById('operand1').value);
+        var operand2 = parseInt(document.getElementById('operand2').value);
 
-      var operation = document.forms[0];
+        var operation = document.forms[0];
 
-      var element = document.getElementById('resultNumber');
-      function Operate() {
+        var element = document.getElementById('resultNumber');
+        console.log("hi");
         if (operation[0].checked){
           element.value = operand1 + operand2;
         } else if(operation[1].checked) {
@@ -25,9 +27,10 @@
         } else if (operation[4].checked) {
           element.value = operand1 % operand2;
         } else if (operation[5].checked) {
-          element.value = operand1 ** operand2
+          element.value = operand1 ** operand2;
         }
       }
+      
     </script>
 
     Operand 1:  <input id="operand1" alt="First Operand" type="text" value="0"/> 
@@ -44,10 +47,12 @@
         <br>
     </form>
 
-    <button type="button" onclick="Operate()" >Operate</button>
+    <button type="button" onclick="Operates()" >Operate</button>
 
     <br>
 
     Result: <input id="resultNumber" alt="Result" type="text" value="0"/>
+
+    <p>Go to <a href="index.html">home page</a></p>
   </body>
 </html>

@@ -25,6 +25,8 @@ BG_COLOR = (50, 50, 100)
 BOARD_COLOR = (40, 40, 40)
 SPOT_COLOR = (75, 75, 75)
 
+
+
 display = pygame.display.set_mode((WIDTH, HEIGHT))
 FramePerSec = pygame.time.Clock()
 
@@ -39,6 +41,8 @@ def hintBoard():
     hintBoard.rect = hintBoard.surf.get_rect(center =(CENTER[0], CENTER[1] - (HEIGHT // 3)))
 
 inputPinSpotList = []
+inputPinColorList = []
+turn = 0
 hintPinSpotList = []
 hintDividerLineList = []
 
@@ -68,7 +72,8 @@ def pins():
 
                 if inputPinSpotList[i].collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_1 :
                     pygame.draw.rect(display, RED, inputPinSpotList[i])
-
+    
+        
 
 Board()
 hintBoard()
