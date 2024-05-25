@@ -4,7 +4,6 @@ function drawScreen() {
     drawRect1(100, 150, 50, 70, "#ff0000", false);
     drawArc(180, 270, 50, 180, 360, "#00ff00", false);
     drawCirc(150, 200, 50, "#000000", true)
-    
 
 }
 
