@@ -13,6 +13,7 @@ O_COLOR = (250, 100, 100)
 PLUS_COLOR = (100, 200, 100)
 
 Turn = 0
+clickedBoxes = []
 
 
 pygame.init()
@@ -30,7 +31,7 @@ class Lines(pygame.sprite.Sprite):
     
 
 class HitBox(pygame.sprite.Sprite):
-    def __init__(self, x, y, w, h):
+    def __init__(self, x, y, w, h, boxPos):
         pygame.sprite.Sprite.__init__(self)
 
         self.surf = pygame.Surface((w, h))
@@ -38,7 +39,8 @@ class HitBox(pygame.sprite.Sprite):
 
         mouse_x = pygame.mouse.get_pos()[0]
         mouse_y = pygame.mouse.get_pos()[1]
-        
+        pressed1 = pygame.mouse.get_pressed()[0]
+
 
         if self.rect.collidepoint(mouse_x, mouse_y):
             self.surf.fill(HOVER_COLOR)
@@ -47,9 +49,13 @@ class HitBox(pygame.sprite.Sprite):
         if self.rect.collidepoint(mouse_x, mouse_y) == False:
             self.surf.fill(BG_COLOR)
 
-        for event_1 in pygame.event.get():
-            if event_1.type == MOUSEBUTTONDOWN and self.rect.collidepoint(mouse_x, mouse_y):
-                print("yes")
+
+        if self.rect.collidepoint(mouse_x, mouse_y) and pressed1:
+            
+            
+        if clicked == 1:
+            self.surf.fill(O_COLOR)
+
 
 
 
@@ -63,14 +69,14 @@ Vert_Line_2 = Lines(500, 300, 10, 500, LINE_COLOR)
 Horiz_Line_1 = Lines(400, 200, 500, 10, LINE_COLOR)
 Horiz_Line_2 = Lines(400, 400, 500, 10, LINE_COLOR)
 
-TLHitbox = HitBox(295, 50, 145, 145)
-MLHitbox = HitBox(295, 205, 145, 190)
-BLHitbox = HitBox(295, 405, 145, 145)
-TCHitbox = HitBox(495, 50, 190, 145)
-MCHitbox = HitBox(495, 205, 190, 190)
-BCHitbox = HitBox(495, 405, 190, 145)
-TRHitbox = HitBox(650, 50, 145, 145)
-MRHitbox = HitBox(650, 205, 145, 190)
+TLHitbox = HitBox(295, 50, 145, 145, 0)
+MLHitbox = HitBox(295, 205, 145, 190, 3)
+BLHitbox = HitBox(295, 405, 145, 145, 6)
+TCHitbox = HitBox(495, 50, 190, 145, 1)
+MCHitbox = HitBox(495, 205, 190, 190, 4)
+BCHitbox = HitBox(495, 405, 190, 145, )
+TRHitbox = HitBox(650, 50, 145, 145, 2)
+MRHitbox = HitBox(650, 205, 145, 190, 5)
 BRHitbox = HitBox(650, 405, 145, 145)
 
 
