@@ -27,7 +27,7 @@ class Lines(pygame.sprite.Sprite):
         self.surf = pygame.Surface((w, h))
         self.surf.fill(rgb)
         self.rect = self.surf.get_rect(center=(x,y))
-        
+    
 
 class HitBox(pygame.sprite.Sprite):
     def __init__(self, x, y, w, h):
