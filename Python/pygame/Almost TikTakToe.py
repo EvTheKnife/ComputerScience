@@ -53,8 +53,7 @@ class HitBox(pygame.sprite.Sprite):
         if self.rect.collidepoint(mouse_x, mouse_y) and pressed1:
             pass
             
-        if clicked == 1:
-            self.surf.fill(O_COLOR)
+
 
 
 
