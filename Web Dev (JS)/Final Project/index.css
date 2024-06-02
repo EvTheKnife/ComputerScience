@@ -1,17 +1,129 @@
 #TTT {
     display: inline-block;
-    animation: rotation 2s infinite ;
+    margin-top: 7.5%;
+    margin-left: 63%;
+    transform: rotate(10deg);
+}
+#TTT:hover {
+    animation: Rotation_1 2.5s infinite;
 }
 
-@keyframes rotation {
+
+#DNB:hover {
+    animation: Rotation_2 2.5s infinite;
+
+}
+#DNB {
+    display: inline-block;    
+    margin-top: 4.25%;
+    margin-left: 29%;
+    transform: rotate(-15deg);
+
+}
+
+
+#HM {
+    display: inline-block;
+    margin-top: 10%;
+    margin-left: 50%;
+
+    transform: rotate(3.5deg);
+}
+#HM:hover {
+    animation: Rotation_1 2.5s infinite;
+}
+
+h3 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: rgb(88, 20, 96);
+}
+
+h1 {
+    text-align: center;
+    animation: opacity 2.5s infinite;
+    opacity: 0;
+    color: red;
+}
+
+
+a:link {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+a:visited {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+@keyframes Rotation_1 {
     25% {
-        transform: rotate(-40deg);
+        transform: rotate(-20deg);
     }
     50% {
         transform: rotate(25deg);
     }
-    75% {
-        transform: rotate(0deg);
+    70% {
+        transform: rotate(10deg);
     }
 
+}
+@keyframes Rotation_2 {
+    25% {
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(-25deg);
+    }
+    70% {
+        transform: rotate(-15deg);
+    }
+
+}
+@keyframes Rotation_3 {
+    25% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(25deg);
+    }
+    70% {
+        transform: rotate(3.5deg);
+    }
+
+}
+
+@keyframes opacity {
+    50% {
+        opacity: 1;
+
+    }
+    100% {
+        opacity: 0;
+        }
+
+}
+
+
+
+
+
+body {
+    
+    background-image: url("https://t4.ftcdn.net/jpg/05/77/63/95/360_F_577639532_5mYr70FESqQo7wrbTl6OjgqVgQsiPvuF.jpg"); 
+    background-position:center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+        background-color: black;   
 }
