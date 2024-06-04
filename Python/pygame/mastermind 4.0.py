@@ -25,12 +25,16 @@ BG_COLOR = (50, 50, 100)
 BOARD_COLOR = (40, 40, 40)
 SPOT_COLOR = (75, 75, 75)
 
-
-
 display = pygame.display.set_mode((WIDTH, HEIGHT))
 FramePerSec = pygame.time.Clock()
 
 
+
+
+
+
+
+display.fill(BG_COLOR)
 
 run = True
 
