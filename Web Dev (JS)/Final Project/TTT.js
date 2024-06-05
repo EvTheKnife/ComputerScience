@@ -1,11 +1,13 @@
-var turn = 0;
+var turn = 0
 
 function Master_Function(Box_Pos) {
+
     switch (turn) {
         case 0:
             switch(Box_Pos) {
             case 'TL':
                 var img_ID = document.getElementById('Box_TL')
+                
                 change_Box_X(img_ID)
                 break;
             case 'TC':
