@@ -1,0 +1,478 @@
+
+speed(0)
+
+def board():
+
+    penup()
+
+    goto(-50, 150)
+
+    pendown()
+
+    right(90)
+
+    forward(300)
+
+    left(90)
+
+    penup()
+
+    forward(100)
+
+    pendown()
+
+    left(90)
+
+    forward(300)
+
+    right(90)
+
+    penup()
+
+    goto(-150, 50)
+
+    pendown()
+
+    forward(300)
+
+    penup()
+
+    goto(-150, -50)
+
+    pendown()
+
+    forward(300)
+
+    penup()
+
+    goto(-150, 150)
+
+def make_X(x, y):
+
+    penup()
+
+    goto(x, y)
+
+    pendown()
+
+    left(45)
+
+    for i in range(4):
+
+        forward(50)
+
+        backward(50)
+
+        left(90)
+
+    penup()
+
+    right(45)
+
+def make_O(x, y):
+
+    penup()
+
+    goto(x, y-40)
+
+    pendown()
+
+    circle(40)
+
+    penup()
+
+def gamePlay():
+
+    topY = 100
+
+    middleY = 0
+
+    bottomY = -100
+
+    leftX = -100
+
+    middleX = 0
+
+    rightX = 100
+
+    topleft = 0
+
+    topmiddle = 0
+
+    topright = 0
+
+    middleleft = 0
+
+    middlemiddle = 0
+
+    middleright = 0
+
+    bottomleft = 0
+
+    bottommiddle = 0
+
+    bottomright = 0
+
+    XTurn = True
+
+    done = False
+
+    board = []
+
+    filled = False
+
+    for i in range(3):
+
+        row = []
+
+        for j in range(3):
+
+            row.append("-")
+
+        board.append(row)
+
+    while(done != True):
+
+        player = input("Choose your spot:\n top left \n top middle \n top right \n middle left \n center \n middle right \n bottom left \n bottom middle \n bottom right \n")
+
+        if player == "top left" and topleft == 0:
+
+            if XTurn == True:
+
+                make_X(leftX, topY)
+
+                board[0][0] = "X"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = False
+
+            else:
+
+                make_O(leftX, topY)
+
+                board[0][0] = "O"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = True
+
+            topleft = 1
+
+        elif player == "top middle" and topmiddle == 0:
+
+            if XTurn == True:
+
+                make_X(middleX, topY)
+
+                board[0][1] = "X"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = False
+
+            else:
+
+                make_O(middleX, topY)
+
+                board[0][1] = "O"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = True
+
+            topmiddle = 1
+
+        elif player == "top right" and topright == 0:
+
+            if XTurn == True:
+
+                make_X(rightX, topY)
+
+                board[0][2] = "X"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = False
+
+            else:
+
+                make_O(rightX, topY)
+
+                board[0][2] = "O"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = True
+
+            topright = 1
+
+        elif player == "middle left" and middleleft == 0:
+
+            if XTurn == True:
+
+                make_X(leftX, middleY)
+
+                board[1][0] = "X"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = False
+
+            else:
+
+                make_O(leftX, middleY)
+
+                board[1][0] = "O"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = True
+
+            middleleft = 1
+
+        elif player == "center" and middlemiddle == 0:
+
+            if XTurn == True:
+
+                make_X(middleX, middleY)
+
+                board[1][1] = "X"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = False
+
+            else:
+
+                make_O(middleX, middleY)
+
+                board[1][1] = "O"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = True
+
+            middlemiddle = 1
+
+        elif player == "middle right" and middleright == 0:
+
+            if XTurn == True:
+
+                make_X(rightX, middleY)
+
+                board[1][2] = "X"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = False
+
+            else:
+
+                make_O(rightX, middleY)
+
+                board[1][2] = "O"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = True
+
+            middleright = 1
+
+        elif player == "bottom left" and bottomleft == 0:
+
+            if XTurn == True:
+
+                make_X(leftX, bottomY)
+
+                board[2][0] = "X"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = False
+
+            else:
+
+                make_O(leftX, bottomY)
+
+                board[2][0] = "O"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = True
+
+            bottomleft = 1
+
+        elif player == "bottom middle" and bottommiddle == 0:
+
+            if XTurn == True:
+
+                make_X(middleX, bottomY)
+
+                board[2][1] = "X"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = False
+
+            else:
+
+                make_O(middleX, bottomY)
+
+                board[2][1] = "O"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = True
+
+            bottommiddle = 1
+
+        elif player == "bottom right" and bottomright == 0:
+
+            if XTurn == True:
+
+                make_X(rightX, bottomY)
+
+                board[2][2] = "X"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = False
+
+            else:
+
+                make_O(rightX, bottomY)
+
+                board[2][2] = "O"
+
+                done = hasWon(XTurn, board)
+
+                XTurn = True
+
+            bottomright = 1
+
+        filled = is_board_filled(board)
+
+        if filled == True:
+
+            done = True
+
+    if filled !=True and XTurn == True:
+
+        print("Game over O Wins!!")
+
+    elif filled != True and XTurn == False:
+
+        print("Game over X Wins!!")
+
+    else:
+
+        print ("Cats Game Nobody Wins!")
+
+def hasWon(XTurn, board):
+
+    if XTurn:
+
+        player  = "X"
+
+    else:
+
+        player = "O"
+
+    win = False
+
+    n = len(board)
+
+    for i in range(n):
+
+        win = True
+
+        for j in range(n):
+
+            if board[i][j] != player:
+
+                win = False
+
+                break
+
+        if win:
+
+            return win
+
+    for i in range(n):
+
+        win = True
+
+        for j in range(n):
+
+            if board[j][i] != player:
+
+                win = False
+
+                break
+
+        if win:
+
+            return win
+
+    win = True
+
+    for i in range(n):
+
+        if board[i][i] != player:
+
+            win = False
+
+            break
+
+    if win:
+
+        return win
+
+ 
+
+    win = True
+
+    for i in range(n):
+
+        if board[i][n - 1 - i] != player:
+
+            win = False
+
+            break
+
+    if win:
+
+        return win
+
+    return False
+
+ 
+
+    for row in board:
+
+        for item in row:
+
+            if item == '-':
+
+                return False
+
+    return True
+
+def is_board_filled(board):
+
+    for row in board:
+
+        for item in row:
+
+            if item == '-':
+
+                return False
+
+    return True
+
+# Game Start
+
+board()
+
+gamePlay()

@@ -87,6 +87,8 @@ function Master_Function(Box_Pos) {
             turn = 1;
 
             break;
+
+        
         case 1:
             switch(Box_Pos) {
                 case 'TL':
@@ -155,7 +157,7 @@ function Master_Function(Box_Pos) {
                     if (BR_checked == false) {
                         change_Box_O(img_ID)
                         BR_checked = true
-
+                        
                     }             
                     break;
             }
