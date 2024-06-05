@@ -34,5 +34,5 @@ function Master_Function(Box_Pos) {
 }
 
 function change_Box(img_ID) {
-    document.getElementById(img_ID).src="TTT_Images/istockphoto-1362671957-100x100.jpg"
+    img_ID.src="TTT_Images/istockphoto-1362671957-100x100.jpg"
 }
