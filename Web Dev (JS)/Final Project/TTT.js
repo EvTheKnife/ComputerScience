@@ -1,4 +1,14 @@
 var turn = 0
+var TL_checked = false
+var TC_checked = false
+var TR_checked = false
+var CL_checked = false
+var CC_checked = false
+var CR_checked = false
+var BL_checked = false
+var BC_checked = false
+var BR_checked = false
+
 
 function Master_Function(Box_Pos) {
 
@@ -7,40 +17,71 @@ function Master_Function(Box_Pos) {
             switch(Box_Pos) {
             case 'TL':
                 var img_ID = document.getElementById('Box_TL')
-                
-                change_Box_X(img_ID)
+                if (TL_checked == false) {
+                    change_Box_X(img_ID)
+                    TL_checked = true
+                }
+
                 break;
             case 'TC':
                 var img_ID = document.getElementById('Box_TC')
-                change_Box_X(img_ID)
+                if (TC_checked == false) {
+                    change_Box_X(img_ID)
+                    TC_checked = true
+                }                
                 break;
             case 'TR':
                 var img_ID = document.getElementById('Box_TR')
-                change_Box_X(img_ID)
+                if (TR_checked == false) {
+                    change_Box_X(img_ID)
+                    TR_checked = true
+                }
                 break;
             case 'CL':
                 var img_ID = document.getElementById('Box_CL')
-                change_Box_X(img_ID)
+                if (CL_checked == false) {
+                    change_Box_X(img_ID)
+                    CL_checked = true
+                }
                 break;
             case 'CC':
                 var img_ID = document.getElementById('Box_CC')
-                change_Box_X(img_ID)
+                if (CC_checked == false) {
+                    change_Box_X(img_ID)
+                    CC_checked = true
+                }
                 break;
             case 'CR':
                 var img_ID = document.getElementById('Box_CR')
-                change_Box_X(img_ID)
+                if (CR_checked == false) {
+                    change_Box_X(img_ID)
+                    CR_checked = true
+
+                }
                 break;
             case 'BL':
                 var img_ID = document.getElementById('Box_BL')
-                change_Box_X(img_ID)
+                if (BL_checked == false) {
+                    change_Box_X(img_ID)
+                    BL_checked = true
+
+                }
                 break;
             case 'BC':
                 var img_ID = document.getElementById('Box_BC')
-                change_Box_X(img_ID)
+                if (BC_checked == false) {
+                    change_Box_X(img_ID)
+                    BC_checked = true
+
+                }
                 break;
             case 'BR':
                 var img_ID = document.getElementById('Box_BR')
-                change_Box_X(img_ID)
+                if (BR_checked == false) {
+                    change_Box_X(img_ID)
+                    BR_checked = true
+
+                }
                 break;
             }
             turn = 1;
@@ -50,43 +91,75 @@ function Master_Function(Box_Pos) {
             switch(Box_Pos) {
                 case 'TL':
                     var img_ID = document.getElementById('Box_TL')
-                    change_Box_O(img_ID)
+                    if (TL_checked == false) {
+                        change_Box_O(img_ID)
+                        TL_checked = true
+                    }                    
                     break;
                 case 'TC':
                     var img_ID = document.getElementById('Box_TC')
-                    change_Box_O(img_ID)
+                    if (TC_checked == false) {
+                        change_Box_O(img_ID)
+                        TC_checked = true
+                    }             
                     break;
                 case 'TR':
                     var img_ID = document.getElementById('Box_TR')
-                    change_Box_O(img_ID)
+                    if (TR_checked == false) {
+                        change_Box_O(img_ID)
+                        TR_checked = true
+
+                    }             
                     break;
                 case 'CL':
                     var img_ID = document.getElementById('Box_CL')
-                    change_Box_O(img_ID)
+                    if (CL_checked == false) {
+                        change_Box_O(img_ID)
+                        CL_checked = true
+
+                    }             
                     break;
                 case 'CC':
                     var img_ID = document.getElementById('Box_CC')
-                    change_Box_O(img_ID)
+                    if (CC_checked == false) {
+                        change_Box_O(img_ID)
+                        CC_checked = true
+
+                    }             
                     break;
                 case 'CR':
                     var img_ID = document.getElementById('Box_CR')
-                    change_Box_O(img_ID)
+                    if (CR_checked == false) {
+                        change_Box_O(img_ID)
+                        CR_checked = true
+
+                    }             
                     break;
                 case 'BL':
                     var img_ID = document.getElementById('Box_BL')
-                    change_Box_O(img_ID)
+                    if (BL_checked == false) {
+                        change_Box_O(img_ID)
+                        BL_checked = true
+
+                    }             
                     break;
                 case 'BC':
                     var img_ID = document.getElementById('Box_BC')
-                    change_Box_O(img_ID)
+                    if (BC_checked == false) {
+                        change_Box_O(img_ID)
+                        BC_checked = true
+                    }             
                     break;
                 case 'BR':
                     var img_ID = document.getElementById('Box_BR')
-                    change_Box_O(img_ID)
+                    if (BR_checked == false) {
+                        change_Box_O(img_ID)
+                        BR_checked = true
+
+                    }             
                     break;
             }
             turn = 0;
-            console.log(turn)
             break;
     
     
