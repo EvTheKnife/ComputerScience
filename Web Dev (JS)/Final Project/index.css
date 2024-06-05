@@ -67,7 +67,7 @@ a:visited {
 
 button {
     position: absolute;
-    top: 0px;
+    top: 5px;
     right: 0px;
     animation: opacity 2.5s infinite;
     opacity: 0;
