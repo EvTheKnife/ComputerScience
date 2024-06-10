@@ -8,6 +8,11 @@ var CR_checked = false
 var BL_checked = false
 var BC_checked = false
 var BR_checked = false
+let board = [
+    [2, 2, 2],
+    [2, 2, 2],
+    [2, 2, 2]
+  ];
 
 
 function Master_Function(Box_Pos) {
@@ -20,6 +25,9 @@ function Master_Function(Box_Pos) {
                 if (TL_checked == false) {
                     change_Box_X(img_ID)
                     TL_checked = true
+                    turn = 1;
+                    board[0][0]=0
+
                 }
 
                 break;
@@ -28,6 +36,8 @@ function Master_Function(Box_Pos) {
                 if (TC_checked == false) {
                     change_Box_X(img_ID)
                     TC_checked = true
+                    turn = 1;
+
                 }                
                 break;
             case 'TR':
@@ -35,6 +45,8 @@ function Master_Function(Box_Pos) {
                 if (TR_checked == false) {
                     change_Box_X(img_ID)
                     TR_checked = true
+                    turn = 1;
+
                 }
                 break;
             case 'CL':
@@ -42,6 +54,8 @@ function Master_Function(Box_Pos) {
                 if (CL_checked == false) {
                     change_Box_X(img_ID)
                     CL_checked = true
+                    turn = 1;
+
                 }
                 break;
             case 'CC':
@@ -49,6 +63,8 @@ function Master_Function(Box_Pos) {
                 if (CC_checked == false) {
                     change_Box_X(img_ID)
                     CC_checked = true
+                    turn = 1;
+
                 }
                 break;
             case 'CR':
@@ -56,6 +72,7 @@ function Master_Function(Box_Pos) {
                 if (CR_checked == false) {
                     change_Box_X(img_ID)
                     CR_checked = true
+                    turn = 1;
 
                 }
                 break;
@@ -64,6 +81,7 @@ function Master_Function(Box_Pos) {
                 if (BL_checked == false) {
                     change_Box_X(img_ID)
                     BL_checked = true
+                    turn = 1;
 
                 }
                 break;
@@ -72,6 +90,7 @@ function Master_Function(Box_Pos) {
                 if (BC_checked == false) {
                     change_Box_X(img_ID)
                     BC_checked = true
+                    turn = 1;
 
                 }
                 break;
@@ -80,11 +99,12 @@ function Master_Function(Box_Pos) {
                 if (BR_checked == false) {
                     change_Box_X(img_ID)
                     BR_checked = true
+                    turn = 1;
+
 
                 }
                 break;
             }
-            turn = 1;
 
             break;
 
@@ -96,6 +116,8 @@ function Master_Function(Box_Pos) {
                     if (TL_checked == false) {
                         change_Box_O(img_ID)
                         TL_checked = true
+                        turn = 0;
+
                     }                    
                     break;
                 case 'TC':
@@ -103,6 +125,8 @@ function Master_Function(Box_Pos) {
                     if (TC_checked == false) {
                         change_Box_O(img_ID)
                         TC_checked = true
+                        turn = 0;
+
                     }             
                     break;
                 case 'TR':
@@ -110,6 +134,7 @@ function Master_Function(Box_Pos) {
                     if (TR_checked == false) {
                         change_Box_O(img_ID)
                         TR_checked = true
+                        turn = 0;
 
                     }             
                     break;
@@ -118,6 +143,7 @@ function Master_Function(Box_Pos) {
                     if (CL_checked == false) {
                         change_Box_O(img_ID)
                         CL_checked = true
+                        turn = 0;
 
                     }             
                     break;
@@ -126,6 +152,7 @@ function Master_Function(Box_Pos) {
                     if (CC_checked == false) {
                         change_Box_O(img_ID)
                         CC_checked = true
+                        turn = 0;
 
                     }             
                     break;
@@ -134,6 +161,7 @@ function Master_Function(Box_Pos) {
                     if (CR_checked == false) {
                         change_Box_O(img_ID)
                         CR_checked = true
+                        turn = 0;
 
                     }             
                     break;
@@ -142,6 +170,7 @@ function Master_Function(Box_Pos) {
                     if (BL_checked == false) {
                         change_Box_O(img_ID)
                         BL_checked = true
+                        turn = 0;
 
                     }             
                     break;
@@ -150,6 +179,8 @@ function Master_Function(Box_Pos) {
                     if (BC_checked == false) {
                         change_Box_O(img_ID)
                         BC_checked = true
+                        turn = 0;
+
                     }             
                     break;
                 case 'BR':
@@ -157,11 +188,11 @@ function Master_Function(Box_Pos) {
                     if (BR_checked == false) {
                         change_Box_O(img_ID)
                         BR_checked = true
-                        
+                        turn = 0;
+
                     }             
                     break;
             }
-            turn = 0;
             break;
     
     
@@ -174,4 +205,24 @@ function change_Box_X(img_ID) {
 }
 function change_Box_O(img_ID) {
     img_ID.src="TTT_Images/O_icon.png"
+}
+
+function checkWinner(){
+    // check who's turn it is X or O
+    for(var i=0; i < board.length; i++){
+        for(var j=0; j < board.length; j++){
+            if (board[i][j] != 0){
+                return false
+                break;
+            }
+        }
+    }
+    for(var i=0; i < board.length; i++){
+        for(var j=0; j < board.length; j++){
+            if (board[i][j] != 0){
+                return false
+                break;
+            }
+        }
+    }
 }
