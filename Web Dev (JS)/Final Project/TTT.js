@@ -36,6 +36,8 @@ function Master_Function(Box_Pos) {
                 if (TC_checked == false) {
                     change_Box_X(img_ID)
                     TC_checked = true
+                    board[0][1]=0
+
                     turn = 1;
 
                 }                
@@ -46,6 +48,7 @@ function Master_Function(Box_Pos) {
                     change_Box_X(img_ID)
                     TR_checked = true
                     turn = 1;
+                    board[0][2]=0
 
                 }
                 break;
@@ -55,6 +58,7 @@ function Master_Function(Box_Pos) {
                     change_Box_X(img_ID)
                     CL_checked = true
                     turn = 1;
+                    board[1][0]=0
 
                 }
                 break;
@@ -64,6 +68,7 @@ function Master_Function(Box_Pos) {
                     change_Box_X(img_ID)
                     CC_checked = true
                     turn = 1;
+                    board[1][1]=0
 
                 }
                 break;
@@ -73,6 +78,7 @@ function Master_Function(Box_Pos) {
                     change_Box_X(img_ID)
                     CR_checked = true
                     turn = 1;
+                    board[1][2]=0
 
                 }
                 break;
@@ -82,6 +88,7 @@ function Master_Function(Box_Pos) {
                     change_Box_X(img_ID)
                     BL_checked = true
                     turn = 1;
+                    board[2][0]=0
 
                 }
                 break;
@@ -91,6 +98,7 @@ function Master_Function(Box_Pos) {
                     change_Box_X(img_ID)
                     BC_checked = true
                     turn = 1;
+                    board[2][1]=0
 
                 }
                 break;
@@ -100,12 +108,11 @@ function Master_Function(Box_Pos) {
                     change_Box_X(img_ID)
                     BR_checked = true
                     turn = 1;
-
-
+                    board[2][2]=0
                 }
                 break;
             }
-
+            console.log(board)
             break;
 
         
@@ -193,6 +200,8 @@ function Master_Function(Box_Pos) {
                     }             
                     break;
             }
+            console.log(board)
+
             break;
     
     
@@ -219,10 +228,25 @@ function checkWinner(){
     }
     for(var i=0; i < board.length; i++){
         for(var j=0; j < board.length; j++){
-            if (board[i][j] != 0){
+            if (board[j][i] != 0){
                 return false
                 break;
             }
         }
     }
+
+    for(var i=0; i < board.length; i++){
+            if (board[i][i] != 0){
+                return false
+                break;
+            }
+    }
+
+    for(var i=0; i < board.length; i++){
+        if (board[i][board.length - 1 - i] != 0){
+            return false
+            break;
+        }
+}
+
 }
