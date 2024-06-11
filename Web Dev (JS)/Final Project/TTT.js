@@ -285,9 +285,11 @@ function checkWinner(turn){
             if (board[i][j] == turn){
                 in_a_row++
                 break;
+
             }
         }
-    }
+    }                
+
     for(var i=0; i < board.length; i++){
         for(var j=0; j < board.length; j++){
             if (board[j][i] == turn){
