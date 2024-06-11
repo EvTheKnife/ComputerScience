@@ -298,7 +298,7 @@ function checkWinner(turn){
         for(var j=0; j < board.length; j++){
             if (board[j][i] == turn){
                 in_a_row++  
-                break;
+                //break;
  
             }
         }
@@ -308,7 +308,7 @@ function checkWinner(turn){
 
         if (board[i][i] == turn){
             in_a_row++   
-            break;
+            //break;
 
         }
 
@@ -319,7 +319,7 @@ function checkWinner(turn){
 
         if (board[i][board.length - 1 - i] == turn){
             in_a_row++   
-            break;
+            //break;
 
         }
     }
