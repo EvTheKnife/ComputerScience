@@ -247,37 +247,51 @@ function change_Box_O(img_ID) {
 
 function checkWinner(turn){
 
+    console.log(turn)
     var win = true
     for(var i=0; i < board.length; i++){
         for(var j=0; j < board.length; j++){
             if (board[i][j] != turn){
                 win= false
-                //break;
+                break;
             }
+        }
+        if (win){
+            return true;
         }
     }
     for(var i=0; i < board.length; i++){
         for(var j=0; j < board.length; j++){
             if (board[j][i] != turn){
                 win= false
-                //break;
+                break;
             }
         }
+        if (win){
+            return true;
+        }
     }
-
+win = true
     for(var i=0; i < board.length; i++){
             if (board[i][i] != turn){
                 win= false
-                //break;
+                break;
             }
+    }
+    if (win){
+        return true;
     }
 
     for(var i=0; i < board.length; i++){
         if (board[i][board.length - 1 - i] != turn){
             win= false
-            //break;
+            break;
         }
     }
-
+    if (win){
+        return true;
+    }
     console.log(win)
+    return false;
+    
 }
