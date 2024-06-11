@@ -246,16 +246,28 @@ function change_Box_O(img_ID) {
 }
 
 function checkWinner(turn){
+    var in_a_row = 0;
+
+
 
     for (var row = 0; row < board.length; row++) {
+        in_a_row = 0;
         for (var col = 0; col < board.length; col++) {
             if (board[row][col] == turn) {
-                
+                in_a_row++
             }
         }
 
     }
-
+    for (var row = 0; row < board.length; row++) {
+        in_a_row = 0;
+        for (var col = 0; col < board.length; col++) {
+            if (board[col][row] == turn) {
+                in_a_row++
+            }
+        }
+        
+    }
 
 
 
