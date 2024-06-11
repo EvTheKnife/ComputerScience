@@ -281,16 +281,20 @@ function checkWinner(turn){
     }
 
     for(var i=0; i < board.length; i++){
+        in_a_row = 0
+
         for(var j=0; j < board.length; j++){
             if (board[i][j] == turn){
                 in_a_row++
-                break;
+                //break;
 
             }
         }
     }                
 
     for(var i=0; i < board.length; i++){
+        in_a_row = 0
+
         for(var j=0; j < board.length; j++){
             if (board[j][i] == turn){
                 in_a_row++  
@@ -300,6 +304,8 @@ function checkWinner(turn){
         }
     }
     for(var i=0; i < board.length; i++){
+        in_a_row = 0
+
         if (board[i][i] == turn){
             in_a_row++   
             break;
@@ -309,6 +315,8 @@ function checkWinner(turn){
     }
 
     for(var i=0; i < board.length; i++){
+        in_a_row = 0
+
         if (board[i][board.length - 1 - i] == turn){
             in_a_row++   
             break;
