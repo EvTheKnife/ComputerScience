@@ -247,7 +247,19 @@ function change_Box_O(img_ID) {
 
 function checkWinner(turn){
 
-    console.log(turn)
+    for (var row = 0; row < board.length; row++) {
+        for (var col = 0; col < board.length; col++) {
+            if (board[row][col] == turn) {
+                
+            }
+        }
+
+    }
+
+
+
+
+    /*console.log(turn)
     var win = true
     for(var i=0; i < board.length; i++){
         for(var j=0; j < board.length; j++){
@@ -260,6 +272,9 @@ function checkWinner(turn){
             return true;
         }
     }
+
+    console.log(win)
+
     for(var i=0; i < board.length; i++){
         for(var j=0; j < board.length; j++){
             if (board[j][i] != turn){
@@ -293,5 +308,5 @@ win = true
     }
     console.log(win)
     return false;
-    
+    */
 }
