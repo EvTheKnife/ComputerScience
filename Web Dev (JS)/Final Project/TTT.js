@@ -247,35 +247,75 @@ function change_Box_O(img_ID) {
 
 function checkWinner(turn){
 
+    var in_a_row = 0
+
     for(var i=0; i < board.length; i++){
         for(var j=0; j < board.length; j++){
             if (board[i][j] != turn){
-                return false
-                break;
+                //return false
+                //break;
             }
         }
     }
     for(var i=0; i < board.length; i++){
         for(var j=0; j < board.length; j++){
             if (board[j][i] != turn){
-                return false
-                break;
+                //return false
+                //break;
             }
         }
     }
 
     for(var i=0; i < board.length; i++){
             if (board[i][i] != turn){
-                return false
-                break;
+                //return false
+                //break;
             }
     }
 
     for(var i=0; i < board.length; i++){
         if (board[i][board.length - 1 - i] != turn){
-            return false
-            break;
+            //return false
+            //break;
         }
     }
 
+    for(var i=0; i < board.length; i++){
+        for(var j=0; j < board.length; j++){
+            if (board[i][j] == turn){
+                in_a_row++
+                break;
+            }
+        }
+    }
+    for(var i=0; i < board.length; i++){
+        for(var j=0; j < board.length; j++){
+            if (board[j][i] == turn){
+                in_a_row++  
+                break;
+ 
+            }
+        }
+    }
+    for(var i=0; i < board.length; i++){
+        if (board[i][i] == turn){
+            in_a_row++   
+            break;
+
+        }
+
+    }
+
+    for(var i=0; i < board.length; i++){
+        if (board[i][board.length - 1 - i] == turn){
+            in_a_row++   
+            break;
+
+        }
+    }
+
+    if (in_a_row == 3) {
+        console.log("You won")
+    }
+    console.log(in_a_row)
 }
