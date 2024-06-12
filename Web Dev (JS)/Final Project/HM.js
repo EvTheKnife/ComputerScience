@@ -2,9 +2,13 @@ window.onload(masterFunction())
 
 function masterFunction() {
     //drawRect(100, 475, 475, 100, '#000000', false, 1.0)
-    drawLine(100, 475, 500, 475)
-    drawLine(550, 475, 550, 75, "#000000")
-    drawLine(500, 475, 500, 75, "#000000")
+    drawLine(100, 475, 475, 475)
+    drawLine(510, 475, 525, 475)
+    drawLine(525, 475, 525, 575, )
+
+    drawLine(510, 475, 510, 125, "#000000")
+    drawLine(475, 475, 475, 125, "#000000")
+
 
 }
 
