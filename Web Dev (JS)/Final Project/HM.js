@@ -1,8 +1,6 @@
 
 
 
-
-
 function drawLine(x1, y1, x2, y2, color) {
     var canvas = document.getElementById('canvas').getContext("2d");
     canvas.beginPath();
