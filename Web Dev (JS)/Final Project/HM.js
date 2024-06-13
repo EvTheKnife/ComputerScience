@@ -12,8 +12,8 @@ function HM_logic() {
     while (real_answer_key.includes(user_input)) {
         var input_index = real_answer_key.indexOf(user_input)
         
-        answer_key[input_index] = user_input;
 
+        
         console.log(answer_key)        
         console.log(real_answer_key)
 
