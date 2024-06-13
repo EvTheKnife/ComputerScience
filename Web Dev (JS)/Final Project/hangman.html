@@ -11,7 +11,13 @@
 <body>
 
     <canvas id="Canvas" width="600" height="600" style="border:1px solid #000000;"></canvas>
+    <label class="user_input"> 
+        Guess a letter!
+        <input type="text" name="user_input" class="user_input" id="user_input"/>
+        <input type="submit" id="submit" onclick="HM_logic()"/>
+    </label>
     
+    <h1 id="answer">_ _ _ _ | _ _ _</h1>
 
     <script src='HM.js'></script>
 
