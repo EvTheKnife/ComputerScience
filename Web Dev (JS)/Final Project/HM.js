@@ -13,7 +13,7 @@ function HM_logic() {
         var input_index = real_answer_key.indexOf(user_input)
         
         answer_key[input_index] = user_input;
-        real_answer_key[input_index] = "_";
+
         console.log(answer_key)        
         console.log(real_answer_key)
 
