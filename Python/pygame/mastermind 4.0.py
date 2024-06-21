@@ -1,7 +1,6 @@
 import pygame
 import random
 
-from pygame.sprite import _Group
 
 pygame.init()
 
@@ -33,10 +32,16 @@ FramePerSec = pygame.time.Clock()
 input_spots = pygame.sprite.Group()
 
 class input_spots(pygame.sprite.Sprite):
-    def __init__(self):
-        pygame.sprite.Sprite().__init__(self, input_spots)
+    def __init__(self, size, center_pos, color):
+        pygame.sprite.Sprite.__init__(self)
+        
+        self.surf = pygame.Surface(size)
+        self.surf.fill(color)
+        self.rect = self.surf.get_rect(center = center_pos)
 
+rect1 = input_spots((20, 20), (300, 300), RED)
 
+input_spots.add(rect1)
 
 
 def hintBoard():
@@ -54,6 +59,10 @@ run = True
 while run:
 
     display.blit(hintBoard.surf, hintBoard.rect)
+
+    #for entity in input_spots:
+    
+        display.blit(entity.surf, entity.rect)
 
     pygame.display.update()
     FramePerSec.tick(FPS)
