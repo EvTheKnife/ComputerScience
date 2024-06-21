@@ -26,42 +26,77 @@ BG_COLOR = (50, 50, 100)
 BOARD_COLOR = (40, 40, 40)
 SPOT_COLOR = (75, 75, 75)
 
+turn = 0
+
 display = pygame.display.set_mode((WIDTH, HEIGHT))
 FramePerSec = pygame.time.Clock()
 
 input_spots = pygame.sprite.Group()
 
 class input_spots(pygame.sprite.Sprite):
-    def __init__(self, size, center_pos, color):
+    def __init__(self, size, center_pos):
         pygame.sprite.Sprite.__init__(self)
         
         self.surf = pygame.Surface(size)
-        self.surf.fill(color)
+        color = 0
         self.rect = self.surf.get_rect(center = center_pos)
 
-rect1 = input_spots((20, 20), (300, 300), RED)
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_1 :
+                    color = 1
+                    print("yes")
+                if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_2 :
+                    color = 2
+                if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_3 :
+                    color = 3
+                if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_4 :
+                    color = 4
+                if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_5 :
+                    color = 5
+                if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_6 :
+                    color = 6
 
-input_spots.add(rect1)
+                 
+        if color == 0:
+            self.surf.fill(SPOT_COLOR)
+        if color == 1:
+            self.surf.fill(RED)
+        if color == 2:
+            self.surf.fill(BLUE)
+                 
+                 
+                 
+                 
+                 
+def main_board():
+    main_board.surf = pygame.Surface((BOARD_X, BOARD_Y))
+    main_board.surf.fill(BOARD_COLOR)
+    main_board.rect = main_board.surf.get_rect(center = CENTER)
+
+def hint_board():
+    hint_board.surf = pygame.Surface((HINT_BOARD_X, HINT_BOARD_Y))
+    hint_board.surf.fill(BOARD_COLOR)
+    hint_board.rect = hint_board.surf.get_rect(center =(CENTER[0], CENTER[1] - (HEIGHT // 3)))
 
 
-def hintBoard():
-    hintBoard.surf = pygame.Surface((HINT_BOARD_X, HINT_BOARD_Y))
-    hintBoard.surf.fill(BOARD_COLOR)
-    hintBoard.rect = hintBoard.surf.get_rect(center =(CENTER[0], CENTER[1] - (HEIGHT // 3)))
 
-
+spot_1 = input_spots((20, 20), (300, 300))
 
 display.fill(BG_COLOR)
-hintBoard()
+main_board()
+hint_board()
+
 
 run = True
 
 while run:
 
-    display.blit(hintBoard.surf, hintBoard.rect)
+    display.blit(hint_board.surf, hint_board.rect)
+    display.blit(main_board.surf, main_board.rect)
 
+    display.blit(spot_1.surf, spot_1.rect)
 
-    display.blit(rect1.surf, rect1.rect)
 
     pygame.display.update()
     FramePerSec.tick(FPS)
