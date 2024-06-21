@@ -60,9 +60,8 @@ while run:
 
     display.blit(hintBoard.surf, hintBoard.rect)
 
-    #for entity in input_spots:
-    
-        display.blit(entity.surf, entity.rect)
+
+    display.blit(rect1.surf, rect1.rect)
 
     pygame.display.update()
     FramePerSec.tick(FPS)
