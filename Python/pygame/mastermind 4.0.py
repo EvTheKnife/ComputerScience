@@ -38,34 +38,44 @@ class input_spots(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         
         self.surf = pygame.Surface(size)
-        color = 0
         self.rect = self.surf.get_rect(center = center_pos)
 
-        for event in pygame.event.get():
-            if event.type == pygame.KEYDOWN:
-                if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_1 :
-                    color = 1
-                    print("yes")
-                if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_2 :
-                    color = 2
-                if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_3 :
-                    color = 3
-                if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_4 :
-                    color = 4
-                if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_5 :
-                    color = 5
-                if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_6 :
-                    color = 6
 
-                 
-        if color == 0:
-            self.surf.fill(SPOT_COLOR)
-        if color == 1:
-            self.surf.fill(RED)
-        if color == 2:
-            self.surf.fill(BLUE)
-                 
-                 
+        def color_change(color):
+            for event in pygame.event.get():
+                if event.type == pygame.KEYDOWN:
+                    if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_1 :
+                        color = 1
+                    if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_2 :
+                        color = 2
+                    if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_3 :
+                        color = 3
+                    if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_4 :
+                        color = 4
+                    if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_5 :
+                        color = 5
+                    if self.rect.collidepoint(pygame.mouse.get_pos()) and event.key == pygame.K_6 :
+                        color = 6
+
+                    
+            if color == 0:
+                self.surf.fill(SPOT_COLOR)
+            if color == 1:
+                self.surf.fill(RED)
+            if color == 2:
+                self.surf.fill(BLUE)
+            if color == 3:
+                self.surf.fill(YELLOW)
+            if color == 4:
+                self.surf.fill(GREEN)
+            if color == 5:
+                self.surf.fill(BLACK)
+            if color == 6:
+                self.surf.fill(WHITE)
+        
+        color = 0
+
+        color_change(color)
                  
                  
                  
