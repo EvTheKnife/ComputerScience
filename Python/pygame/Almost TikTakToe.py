@@ -37,6 +37,8 @@ class HitBox(pygame.sprite.Sprite):
         self.surf = pygame.Surface((w, h))
         self.rect = self.surf.get_rect(topright=(x,y))
 
+
+    def 
         mouse_x = pygame.mouse.get_pos()[0]
         mouse_y = pygame.mouse.get_pos()[1]
         pressed1 = pygame.mouse.get_pressed()[0]
@@ -116,15 +118,7 @@ while running:
                 running = False
 
 
-    TLHitbox = HitBox(295, 50, 145, 145)
-    MLHitbox = HitBox(295, 205, 145, 190)
-    BLHitbox = HitBox(295, 405, 145, 145)
-    TCHitbox = HitBox(495, 50, 190, 145)
-    MCHitbox = HitBox(495, 205, 190, 190)
-    BCHitbox = HitBox(495, 405, 190, 145)
-    TRHitbox = HitBox(650, 50, 145, 145)
-    MRHitbox = HitBox(650, 205, 145, 190)
-    BRHitbox = HitBox(650, 405, 145, 145)
+
 
 
 

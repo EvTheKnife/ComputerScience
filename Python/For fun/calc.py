@@ -4,15 +4,15 @@ y = float(input("Input your second number: "))
 operation = input("Input the operation: ")
 
 if operation.lower() == "addition":
-    z = x+y
+    z = x + y
 
 if operation.lower() == "subtraction":
-    z = x-y
+    z = x - y
 
 if operation.lower() == "multiplication":
-    z = x*y
+    z = x * y
 
 if operation.lower() == "division":
-    z = x/y
+    z = x / y
 
 print(z)

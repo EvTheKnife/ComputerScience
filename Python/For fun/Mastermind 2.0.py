@@ -15,6 +15,7 @@ def inputListGen():
     isCorrect = "N"
 
 
+
     while isCorrect.lower() != "y":
         while isValid_1 == False:
             inputColor1 = input("Input a color from this list (as a number): (1 = red, 2 = blue, 3 = yellow, 4 = green, 5 = black, and 6 = white) ")
@@ -147,5 +148,5 @@ if correctSpot >= 4:
     print("You won! Congrats!")
 
 if correctSpot < 4 and i == 11:
-    print("You lost! :(")
+    print("You lost! D:")
     print(f"The correct list was: {secretList}")
